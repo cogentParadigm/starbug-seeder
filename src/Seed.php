@@ -51,9 +51,10 @@ abstract class Seed implements SeedInterface {
     return $values;
   }
   protected function resolve(Bundle $bundle) {
-    $ref = $this->db->query($bundle->get("table"))->conditions($bundle->get("keys"))->one();
+    $keys = $this->expandBundles($bundle->get("keys"));
+    $ref = $this->db->query($bundle->get("table"))->conditions($keys)->one();
     if (empty($ref)) {
-      throw new Exception("No seeded record to reference in ".$bundle->get("table").": ".json_encode($bundle->get("keys")));
+      throw new Exception("No seeded record to reference in ".$bundle->get("table").": ".json_encode($keys));
     }
     return $ref["id"];
   }
