@@ -1,0 +1,30 @@
+{
+  "name": "starbug/seeder",
+  "description": "Seed application data that is meant to be managed by hand afterwards.",
+  "type": "starbug-module",
+  "license": "GPL-3.0-or-later",
+  "authors": [
+    {
+      "name": "Ali Gangji",
+      "homepage": "https://github.com/cogentParadigm"
+    }
+  ],
+  "extra": {
+    "namespace": "Starbug\\Seeder"
+  },
+  "autoload": {
+    "psr-4": {
+      "Starbug\\Seeder\\": "src/"
+    }
+  },
+  "require": {
+    "php": "^8.0",
+    "starbug/bundle": "^1.0",
+    "starbug/db": "^0.12",
+    "starbug/operation": "^0.8",
+    "fakerphp/faker": "^1.20"
+  },
+  "require-dev": {
+    "starbug/devel": "^1.5"
+  }
+}
